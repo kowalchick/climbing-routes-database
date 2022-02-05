@@ -11,11 +11,10 @@ if __name__ == '__main__':
     regions = initial_digesting(main_url, regions_raw)
 
     # write regions list to file
-    if __name__ == '__main__':
-        with open("./database/01_regions.csv", newline='', mode="a", encoding='UTF-8') as regions_csv:
-            fieldnames = ['country', 'region_name', 'link']
-            writer = csv.DictWriter(regions_csv, fieldnames=fieldnames, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL, doublequote=True)
-            for region in regions:
-                writer.writerow(region)
+    with open("./database/01_regions.csv", newline='', mode="a", encoding='UTF-8') as regions_csv:
+        fieldnames = ['country', 'region_name', 'link']
+        writer = csv.DictWriter(regions_csv, fieldnames=fieldnames, delimiter=',', quotechar='"', quoting=csv.QUOTE_ALL, doublequote=True)
+        for region in regions:
+            writer.writerow(region)
 
     print('REGIONS SCRAPING COMPLETED')
